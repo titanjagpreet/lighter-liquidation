@@ -1,13 +1,16 @@
 import express from 'express';
 import fetch from 'node-fetch';
+import cors from "cors";
 import dotenv from 'dotenv';
 dotenv.config();
 import { getLastNMinuteKeys } from './utils.js';
 
 
 const app = express();
+app.use(cors());
+app.use(express.json());
 const PORT = process.env.PORT || 3001;
-const REDIS_KEY = process.env.REDIS_KEY || 'lighter:liquidations'; // legacy key (unused in new scheme)
+const REDIS_KEY = process.env.REDIS_KEY || 'lighter:liquidations';
 
 
 console.log('[server] Starting API server');

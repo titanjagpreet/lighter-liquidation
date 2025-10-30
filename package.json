@@ -9,6 +9,7 @@
         "start:server": "node src/server.js"
     },
     "dependencies": {
+        "cors": "^2.8.5",
         "dotenv": "^16.3.1",
         "express": "^4.19.2",
         "node-fetch": "^3.3.2",
